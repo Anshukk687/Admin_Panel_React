@@ -1,0 +1,61 @@
+import {
+    AppstoreOutlined,
+    ContactsFilled,
+    ShopOutlined,
+    ShoppingCartOutlined,
+    UserOutlined,
+  } from "@ant-design/icons";
+  import { Menu } from "antd";
+  import { useEffect, useState } from "react";
+  import { useLocation, useNavigate } from "react-router-dom";
+  import { Layout } from "antd";
+  
+  function SideMenu() {
+    const location = useLocation();
+    const [selectedKeys, setSelectedKeys] = useState("/");
+
+    useEffect(() => {
+      const pathName = location.pathname;
+      setSelectedKeys(pathName);
+    }, [location.pathname]);
+  
+    const navigate = useNavigate();
+    return (
+      <Layout className="sideMenu">
+      <div className="SideMenu">
+        <Menu
+          className="SideMenuVertical"
+          mode="vertical"
+          onClick={(item) => {
+            //item.key
+            navigate(item.key);
+          }}
+          selectedKeys={[selectedKeys]}
+          items={[
+            {
+              label: "Dashboard",
+              icon: <AppstoreOutlined />,
+              key: "/dashboard",
+            },
+            {
+              label: "Inventory",
+              key: "/inventory",
+              icon: <ShopOutlined />,
+            },
+            {
+              label: "Orders",
+              key: "/orders",
+              icon: <ShoppingCartOutlined />,
+            },
+            {
+              label: "Customers",
+              key: "/customers",
+              icon: <UserOutlined />,
+            },
+          ]}
+        ></Menu>
+      </div>
+      </Layout>
+    );
+  }
+export default SideMenu;

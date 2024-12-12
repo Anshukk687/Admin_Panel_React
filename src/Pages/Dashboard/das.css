@@ -1,0 +1,36 @@
+.dashboard {
+    display: flex;
+    width: 40%;
+}
+.ant-layout.sideMenu {
+    height: 100%;
+}
+.dash-right {
+    background-color: #eaeceb;
+    height: 165%;
+    width: 133%;
+}
+.dash-header {
+    height: 7%;
+    background-color: #5f77ff1f;
+    padding-top: 3px;
+    padding-left: 24px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.dash-content {
+    padding-top: 3%;
+    margin-left: 45px;
+}
+.ant-card.ant-card-bordered {
+    width: 145%;
+}
+.ant-table-wrapper.css-dev-only-do-not-override-142vneq {
+    width: 400px;
+}
+.head-right {
+    float: right;
+    font-size: 20px;
+    padding: 0 20px 0px 0px;
+    margin-top: -40px;
+}
